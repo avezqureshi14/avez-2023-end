@@ -21,14 +21,14 @@ const UpdatePost = () => {
     // Fetch the post data from the API when the component mounts.
     async function fetchPost() {
       try {
-        const response = await axios.get(`http://localhost:8800/blogs/${id}`);
+        const response = await axios.get(`https://avez-blog-2023-end.onrender.com//blogs/${id}`);
         const postData = response.data;
         setTitle(postData.title);
         setContent(postData.content);
         setSelectedCategory(postData.category);
         setImage(postData.image);
         // Fetch categories after post data to set selected category
-        const categoryResponse = await axios.get("http://localhost:8800/categories");
+        const categoryResponse = await axios.get("https://avez-blog-2023-end.onrender.com//categories");
         setCategories(categoryResponse.data);
 
       } catch (error) {

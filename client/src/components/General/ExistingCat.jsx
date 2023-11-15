@@ -7,7 +7,7 @@ const ExistingCat = () => {
     // Fetch the list of categories from the API when the component mounts.
     async function fetchCategories() {
       try {
-        const response = await axios.get("http://localhost:8800/categories");
+        const response = await axios.get("https://avez-blog-2023-end.onrender.com//categories");
         setCategories(response.data);
       } catch (error) {
         // Handle error

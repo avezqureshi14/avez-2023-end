@@ -16,7 +16,7 @@ const Text = ({ blogData }) => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const response = await axios.get(`http://localhost:8800/user/${userId}`);
+        const response = await axios.get(`https://avez-blog-2023-end.onrender.com//user/${userId}`);
         setAuthorData(response.data);
       } catch (error) {
         console.error('There was a problem with the fetch operation:', error);

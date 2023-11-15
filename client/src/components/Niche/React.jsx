@@ -12,7 +12,7 @@ const ReactComponent = () => {
     async function fetchBlogs() {
       try {
         const response = await axios.get(
-          `http://localhost:8800/blogs/category/6555104ffb1346c60b3a12be`
+          `https://avez-blog-2023-end.onrender.com//blogs/category/6555104ffb1346c60b3a12be`
         );
         setPosts(response.data.blogs);
       } catch (error) {

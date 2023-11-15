@@ -12,7 +12,7 @@ const Profile = () => {
     async function fetchCreators() {
       try {
         const response = await axios.get(
-          `http://localhost:8800/user/${userId}`
+          `https://avez-blog-2023-end.onrender.com//user/${userId}`
         );
         setUser(response.data);
       } catch (error) {
@@ -34,7 +34,7 @@ const Profile = () => {
     async function fetchBlogs() {
       try {
         const response = await axios.get(
-          `http://localhost:8800/blogs/user/${userId}`
+          `https://avez-blog-2023-end.onrender.com//blogs/user/${userId}`
         );
         setUserData(response.data.blogs);
       } catch (error) {

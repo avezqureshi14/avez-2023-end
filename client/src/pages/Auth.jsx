@@ -24,7 +24,7 @@ const dispatch = useDispatch();
   useEffect(() => {
     async function fetchCategories() {
       try {
-        const response = await axios.get("http://localhost:8800/categories");
+        const response = await axios.get("https://avez-blog-2023-end.onrender.com//categories");
         setCategories(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);

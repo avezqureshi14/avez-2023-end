@@ -12,7 +12,7 @@ const Recommendation = () => {
     async function fetchBlogs() {
       try {
         const response = await axios.get(
-          `http://localhost:8800/blogs/category/${catId}`
+          `https://avez-blog-2023-end.onrender.com//blogs/category/${catId}`
         );
         setBlogData(response.data.blogs);
       } catch (error) {
