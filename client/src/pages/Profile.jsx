@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import HNav from "../components/Home/HNav";
 import axios from "axios";
 import { Link, useParams } from "react-router-dom";
-import Creator from "../components/Home/Creator";
 const Profile = () => {
   const id = useParams();
   const userId = id.id;
@@ -111,7 +110,6 @@ const Profile = () => {
         </div>
         <div class="space3"></div>
       </main>
-      <Creator/>
     </>
   );
 };

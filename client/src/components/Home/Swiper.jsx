@@ -45,7 +45,7 @@ const SwiperCreator = () => {
                     {truncate(creator.email)}
                   </div>
                   <p class="three-line-ellipsis">{creator.bio}</p>
-                  <Link to={`/profile/${creator._id}`} target="_blank">
+                  <Link to={`/profile/${creator._id}`}>
                     <div class="creatorInfo">
                       <button>View Creator</button>
                     </div>
