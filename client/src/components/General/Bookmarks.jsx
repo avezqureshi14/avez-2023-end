@@ -12,7 +12,7 @@ const Bookmarks = () => {
       try {
         const token = JSON.parse(localStorage.getItem("profile")).token;
 
-        const response = await axios.get(`https://avez-blog-2023-end.onrender.com//bookmark`, {
+        const response = await axios.get(`https://avez-blog-2023-end.onrender.com/bookmark`, {
           headers: {
             Authorization: `Bearer ${token}`,
           },
@@ -21,7 +21,7 @@ const Bookmarks = () => {
         
         const blogIds = response.data.map(bookmark => bookmark.blogId);
         if(blogIds.length > 0) {
-          const blogsResponse = await axios.post(`https://avez-blog-2023-end.onrender.com//blogs/multiple`, { blogIds }, {
+          const blogsResponse = await axios.post(`https://avez-blog-2023-end.onrender.com/blogs/multiple`, { blogIds }, {
             headers: {
               Authorization: `Bearer ${token}`,
             },

@@ -14,7 +14,7 @@ const CreateCat = () => {
 
     try {
       // Make a POST request to the API endpoint to create a new category
-      const response = await axios.post('https://avez-blog-2023-end.onrender.com//categories', {
+      const response = await axios.post('https://avez-blog-2023-end.onrender.com/categories', {
         name: categoryName // Sending the category name in the request body
       });
 

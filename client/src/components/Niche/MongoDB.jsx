@@ -14,7 +14,7 @@ const MongoDB = () => {
     async function fetchBlogs() {
       try {
         const response = await axios.get(
-          `https://avez-blog-2023-end.onrender.com//blogs/category/65550f8cfb1346c60b3a12a7`
+          `https://avez-blog-2023-end.onrender.com/blogs/category/65550f8cfb1346c60b3a12a7`
         );
         setPosts(response.data.blogs);
       } catch (error) {

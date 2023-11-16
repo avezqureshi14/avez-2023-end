@@ -29,7 +29,7 @@ export const fetchCommentsFailure = (error) => ({
 export const addComment = (commentData, token) => {
   return async (dispatch) => {
     try {
-      const response = await fetch('https://avez-blog-2023-end.onrender.com//comments', {
+      const response = await fetch('https://avez-blog-2023-end.onrender.com/comments', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -49,7 +49,7 @@ export const addComment = (commentData, token) => {
 export const fetchComments = (token) => {
   return async (dispatch) => {
     try {
-      const response = await fetch('https://avez-blog-2023-end.onrender.com//comments', {
+      const response = await fetch('https://avez-blog-2023-end.onrender.com/comments', {
         headers: {
           Authorization: `Bearer ${token}`, // Include the bearer token
         },

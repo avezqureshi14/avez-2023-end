@@ -11,7 +11,7 @@ const SwiperCreator = () => {
     // Fetch the list of categories from the API when the component mounts.
     async function fetchCreators() {
       try {
-        const response = await axios.get("https://avez-blog-2023-end.onrender.com//user");
+        const response = await axios.get("https://avez-blog-2023-end.onrender.com/user");
         setCreators(response.data);
       } catch (error) {
         // Handle error

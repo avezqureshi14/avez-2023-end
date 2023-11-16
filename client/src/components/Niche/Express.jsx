@@ -12,7 +12,7 @@ const Express = () => {
     async function fetchBlogs() {
       try {
         const response = await axios.get(
-          `https://avez-blog-2023-end.onrender.com//blogs/category/65551045fb1346c60b3a12b8`
+          `https://avez-blog-2023-end.onrender.com/blogs/category/65551045fb1346c60b3a12b8`
         );
         setPosts(response.data.blogs);
       } catch (error) {

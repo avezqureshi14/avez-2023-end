@@ -23,7 +23,7 @@ const Dashboard = () => {
       try {
         const token = JSON.parse(localStorage.getItem("profile")).token;
         const response = await axios.get(
-          `https://avez-blog-2023-end.onrender.com//blogs/user/${userId}`,
+          `https://avez-blog-2023-end.onrender.com/blogs/user/${userId}`,
           {
             headers: {
               Authorization: `Bearer ${token}`,
@@ -42,7 +42,7 @@ const Dashboard = () => {
   const handleDelete = async (blogId) => {
     try {
       const token = JSON.parse(localStorage.getItem("profile")).token;
-      await axios.delete(`https://avez-blog-2023-end.onrender.com//blogs/${blogId}`, {
+      await axios.delete(`https://avez-blog-2023-end.onrender.com/blogs/${blogId}`, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
