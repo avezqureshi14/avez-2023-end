@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import HNav from "../components/Home/HNav";
 import axios from "axios";
-import { Link, useParams } from "react-router-dom";
+import {Button} from 'antd'
+import { Link,NavLink, useParams } from "react-router-dom";
 const Profile = () => {
   const id = useParams();
   const userId = id.id;
@@ -53,7 +54,10 @@ const Profile = () => {
   return (
     <>
       <HNav />
-      <main>
+      <NavLink to='/' >
+      <Button style={{position:"absolute",left:"14%"}} >Back</Button>
+      </NavLink>
+      <main  style={{marginTop:"1rem"}}  >
         <div class="space1"></div>
         <div class="article_container userProfContainer">
           <div class="art_card userProfile">

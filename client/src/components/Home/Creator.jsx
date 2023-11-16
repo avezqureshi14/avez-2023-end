@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import SwiperCreator from "./Swiper";
 
-const Creator = () => {
+const Creator = ({communityRef}) => {
   return (
     <>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
@@ -12,13 +12,13 @@ const Creator = () => {
         ></path>
       </svg>
 
-      <div class="sectionPopular">
-        <div class="popularContainer">
-          <div class="popularHeading">
+      <div class="sectionPopular"  id="community"  >
+        <div class="popularContainer" >
+          <div class="popularHeading" >
             <span>Our Community </span>
           </div>
           <div class="creators">
-            <SwiperCreator />;
+            <SwiperCreator  />;
           </div>
           <h3 className="swipeMore">Swipe for more</h3>
         </div>
