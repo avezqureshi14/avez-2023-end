@@ -4,15 +4,33 @@ import HSide from "../components/Home/HSide";
 import HNav from "../components/Home/HNav";
 import Recommendation from "../components/Home/Recommendation";
 import WriteIlu from "../components/Home/WriteIlu";
-import { NavLink } from "react-router-dom";
+import { NavLink, useLocation, useNavigate } from "react-router-dom";
 import Creator from "../components/Home/Creator";
+import Feature from "./Feature";
+
 const Home = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const { search } = useLocation();
+  const queryParams = new URLSearchParams(search);
+  const reload = queryParams.get("reload");
+  const navigate = useNavigate();
 
   useEffect(() => {
-    const profile = JSON.parse(localStorage.getItem('profile'));
+    const profile = JSON.parse(localStorage.getItem("profile"));
     setIsLoggedIn(!!profile); // !! converts the value to a boolean
   }, []);
+
+  useEffect(() => {
+    if (reload === "true") {
+      // Remove the reload query parameter to avoid continuous reloads
+      const newSearch = new URLSearchParams(search);
+      newSearch.delete("reload");
+      navigate({ search: newSearch.toString() });
+
+      // Reload the page after necessary actions
+      window.location.reload();
+    }
+  }, [reload, search, navigate]);
 
   return (
     <>
@@ -29,6 +47,7 @@ const Home = () => {
               <Recommendation />
               ) : <></>
           }
+          <Feature/>
             <Blogs />
           </div>
           <div className="sidebar_container">

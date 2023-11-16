@@ -1119,6 +1119,14 @@ input[type="search"] + i {
 }
 
 
+.featureButton{
+  display: inline-block;
+}
+
+.featureButton .recommendedBlog{
+  text-align: center;
+}
+
 .none{
   display: flex;
   justify-content: center;

@@ -3,12 +3,11 @@ import axios from "axios";
 import HNav from "../components/Home/HNav";
 import { useDispatch } from "react-redux";
 import { signin, signup } from "../actions/auth";
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-
+import { useNavigate } from "react-router-dom";
 
 const Auth = () => {
-const dispatch = useDispatch();
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
   const [isLogin, setIsLogin] = useState(true);
   const [formData, setFormData] = useState({
     fullName: "",
@@ -24,7 +23,9 @@ const dispatch = useDispatch();
   useEffect(() => {
     async function fetchCategories() {
       try {
-        const response = await axios.get("https://avez-blog-2023-end.onrender.com/categories");
+        const response = await axios.get(
+          "https://avez-blog-2023-end.onrender.com/categories"
+        );
         setCategories(response.data);
       } catch (error) {
         console.error("Error fetching categories:", error);
@@ -45,21 +46,21 @@ const dispatch = useDispatch();
     try {
       if (isLogin) {
         await dispatch(signin(formData));
+        navigate("/?reload=true");
       } else {
         await dispatch(signup(formData));
+        navigate("/?reload=true");
       }
     } catch (error) {
       setError("Error: Something went wrong."); // Set error message
       console.error("Error:", error.message);
       console.error("Response Data:", error.response.data);
-      toast.error('Error: Something went wrong.'); // Display error message
     }
   };
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-
 
   return (
     <>
@@ -153,7 +154,6 @@ const dispatch = useDispatch();
         <div className="space3"></div>
       </main>
     </>
-    
   );
 };
 
