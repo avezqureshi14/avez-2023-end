@@ -1,9 +1,9 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
-const appDetailsSchema = new mongoose.Schema({
+const appSchema = new mongoose.Schema({
   title: { type: String, required: true },
 });
 
-const AppDetails = mongoose.model("AppDetails", appDetailsSchema);
+const App = mongoose.model('App', appSchema);
 
-module.exports = AppDetails;
+module.exports = App;
