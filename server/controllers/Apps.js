@@ -2,17 +2,18 @@ const AppDetails = require("../models/App"); // Adjust the path based on your pr
 
 // Controller to add app details to the database
 const addAppDetails = async (req, res) => {
-  const { title} = req.body;
-  const newApp = new AppDetails({
-    title
-  });
   try {
+    const appData = { ...req.body }; 
+
+    const newApp = new AppDetails(appData);
+
     await newApp.save();
     res.status(201).json(newApp);
   } catch (error) {
     res.status(409).json({ message: error.message });
   }
 };
+
 
 const getApps = async (req, res) => {
   try {
