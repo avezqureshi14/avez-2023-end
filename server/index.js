@@ -6,6 +6,8 @@ const categoryRouter = require('./routes/Category');
 const blogRouter = require('./routes/Blog');
 const userRouter = require('./routes/User');
 const bookmarkRouter = require("./routes/Bookmark");
+const appRouter = require('./routes/App');
+
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
@@ -14,6 +16,8 @@ app.use('/user', userRouter);
 app.use('/categories',categoryRouter);
 app.use('/blogs', blogRouter);
 app.use('/bookmark',bookmarkRouter);
+app.use('/apps', appRouter);
+
 connectToDatabase();
 
 app.listen(8800, () => {
