@@ -7,7 +7,7 @@ const blogRouter = require('./routes/Blog');
 const userRouter = require('./routes/User');
 const bookmarkRouter = require("./routes/Bookmark");
 const appRouter = require('./routes/App');
-const { customerRouter } = require('./routes/customer');
+const customerRouter = require('./routes/customer');
 
 const app = express();
 app.use(cors());
