@@ -7,16 +7,18 @@ const blogRouter = require('./routes/Blog');
 const userRouter = require('./routes/User');
 const bookmarkRouter = require("./routes/Bookmark");
 const appRouter = require('./routes/App');
+const { customerRouter } = require('./routes/customer');
 
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
-app.use(bodyParser.json({ limit: '10mb' })); 
+app.use(bodyParser.json({ limit: '10mb' }));
 app.use('/user', userRouter);
-app.use('/categories',categoryRouter);
+app.use('/categories', categoryRouter);
 app.use('/blogs', blogRouter);
-app.use('/bookmark',bookmarkRouter);
+app.use('/bookmark', bookmarkRouter);
 app.use('/apps', appRouter);
+app.use('/customers', customerRouter);
 
 connectToDatabase();
 
