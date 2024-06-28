@@ -12,7 +12,6 @@ const customerSchema = new mongoose.Schema({
   country: {
     type: String,
     required: true,
-    enum: ["India", "America", "Japan", "China", "Brazil"],
   },
   pincode: {
     type: String,
