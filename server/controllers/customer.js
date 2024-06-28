@@ -20,7 +20,7 @@ const addCustomer = async (req, res) => {
 //Get Customer
 const getCustomer = async (req, res) => {
   try {
-    const customers = await customer.find().sort({ createdAt: -1 });
+    const customers = await customer.find().sort({ id: -1 });
     res.status(200).json({ customers });
   } catch (error) {
     console.log(error);
