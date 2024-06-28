@@ -20,4 +20,7 @@ const customerSchema = new mongoose.Schema({
   },
 });
 
-export const customer = mongoose.model("customer", customerSchema);
+const customer = mongoose.model('customer', customerSchema);
+
+module.exports = customer;
+

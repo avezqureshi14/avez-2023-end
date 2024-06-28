@@ -1,6 +1,6 @@
-import { customer } from "../models/customer.js";
+const customer = require("../models/customer");
 // Add CUSTOMER
-export const addCustomer = async (req, res) => {
+const addCustomer = async (req, res) => {
   const { fullName, address, country, pincode } = req.body;
   const saveData = new customer({
     fullName,
@@ -18,7 +18,7 @@ export const addCustomer = async (req, res) => {
 };
 
 //Get Customer
-export const getCustomer = async (req, res) => {
+const getCustomer = async (req, res) => {
   try {
     const customers = await customer.find().sort({ createdAt: -1 });
     res.status(200).json({ customers });
@@ -29,7 +29,7 @@ export const getCustomer = async (req, res) => {
 };
 
 // Get Customer by Id
-export const getCustomerById = async (req, res) => {
+const getCustomerById = async (req, res) => {
   const { id } = req.params;
   try {
     const customers = await customer.findById(id);
@@ -44,7 +44,7 @@ export const getCustomerById = async (req, res) => {
 };
 
 // Update Customer
-export const updateCustomer = async (req, res) => {
+const updateCustomer = async (req, res) => {
   const { id } = req.params;
   const { fullName, address, country, pincode } = req.body;
   try {
@@ -72,7 +72,7 @@ export const updateCustomer = async (req, res) => {
 };
 
 // Delete Customer
-export const deleteCustomer = async (req, res) => {
+const deleteCustomer = async (req, res) => {
   const { id } = req.params;
 
   try {
@@ -88,7 +88,7 @@ export const deleteCustomer = async (req, res) => {
 };
 
 // Search Customer
-export const searchCustomer = async (req, res) => {
+const searchCustomer = async (req, res) => {
   const searchTerm = req.query.q; // Assuming 'q' as the search parameter
   try {
     const results = await blogPost.find({
@@ -104,4 +104,12 @@ export const searchCustomer = async (req, res) => {
   } catch (error) {
     res.status(500).json({ message: error.message });
   }
+};
+
+module.exports = {
+  addCustomer,
+  getCustomer,
+  getCustomerById,
+  deleteCustomer,
+  updateCustomer
 };
