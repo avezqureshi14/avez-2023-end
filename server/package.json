@@ -19,6 +19,7 @@
     "getstream": "^8.4.0",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^7.6.3",
+    "mongoose-sequence": "^6.0.1",
     "validator": "^13.11.0"
   },
   "engines": {

@@ -1,25 +1,16 @@
-const mongoose = require("mongoose")
+const mongoose = require("mongoose");
+const AutoIncrement = require('mongoose-sequence')(mongoose);
 
 const customerSchema = new mongoose.Schema({
-  fullName: {
-    type: String,
-    required: true,
-  },
-  address: {
-    type: String,
-    required: true,
-  },
-  country: {
-    type: String,
-    required: true,
-  },
-  pincode: {
-    type: String,
-    required: true,
-  },
+  id: { type: Number },
+  fullName: { type: String, required: true },
+  address: { type: String, required: true },
+  country: { type: String, required: true },
+  pincode: { type: String, required: true }
 });
 
-const customer = mongoose.model('customer', customerSchema);
+customerSchema.plugin(AutoIncrement, { inc_field: 'id' });
 
-module.exports = customer;
+const Customer = mongoose.model('Customer', customerSchema);
 
+module.exports = Customer;
